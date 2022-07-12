@@ -14,12 +14,11 @@ export class ScanResultController {
   }
 
   @Get(':scanId')
-  findById(@Param() params) {
-    const { scanId } = params;
+  findById(@Param('scanId') scanId: string) {
     if (!uuidValidate(scanId)) {
       throw new BadRequestException();
     }
-    return this.scanResultService.findById(params.scanId);
+    return this.scanResultService.findById(scanId);
   }
 
   @Post()
@@ -31,22 +30,20 @@ export class ScanResultController {
 
   @Delete(':scanId')
   @HttpCode(204)
-  deleteById(@Param() params) {
-    const { scanId } = params;
+  deleteById(@Param('scanId') scanId: string) {
     if (!uuidValidate(scanId)) {
       throw new BadRequestException();
     }
-    return this.scanResultService.delete(params.scanId);
+    return this.scanResultService.delete(scanId);
   }
 
   @Put(':scanId')
   @UsePipes(new ValidationPipe())
-  updateById(@Param() params, @Body() payload: UpdateScanResultDTO) {
-    const { scanId } = params;
+  updateById(@Param('scanId') scanId: string, @Body() payload: UpdateScanResultDTO) {
     if (!uuidValidate(scanId)) {
       throw new BadRequestException();
     }
-    return this.scanResultService.update(params.scanId, payload);
+    return this.scanResultService.update(scanId, payload);
   }
 
 }

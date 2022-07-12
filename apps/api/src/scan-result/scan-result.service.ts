@@ -40,8 +40,8 @@ export class ScanResultService {
     return this.scanResultRepository.delete(id);
   }
 
-  findAll(): Promise<[ScanResult[], number]> {
-    return this.scanResultRepository.findAndCount();
+  findAll(): Promise<ScanResult[]> {
+    return this.scanResultRepository.find();
   }
 
   findById(id: string) {
