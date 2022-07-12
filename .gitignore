@@ -8,6 +8,9 @@
 # dependencies
 node_modules
 
+#docker postgres
+database
+
 # IDEs and editors
 /.idea
 .project
