@@ -8,7 +8,7 @@ type FormValues = {
   findings: Finding[]
 }
 
-export const formResolver = async (data: FormValues) => {
+export const formResolver = (data: FormValues) => {
   try {
     const values = ScanResultSchema.validateSync(data, { abortEarly: false });
     return { 

@@ -8,6 +8,6 @@ ENV PORT=3333
 
 EXPOSE ${PORT}
 
-RUN npm install --production
+RUN npm install --production pg
 
 CMD node ./main.js

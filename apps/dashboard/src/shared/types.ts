@@ -4,7 +4,7 @@ export type ScanResult = {
   id: string;
   status: ScanStatus;
   repositoryName: string;
-  findings: Array<Finding>;
+  findings: Array<Finding> | null;
   queuedAt: string;
   scanningAt: string | null;
   finishedAt: string | null;

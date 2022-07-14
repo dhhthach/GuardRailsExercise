@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, DropdownProps, Form, Header } from "semantic-ui-react";
 import { STATUS_OPTIONS } from "../../shared/constants";
-import { ScanResult, ScanStatus } from "../../shared/types";
+import { ScanStatus } from "../../shared/types";
 import { formResolver } from "../../shared/utils";
 import { useSubmitScanResult } from "../../hooks/useScanResult";
 import Loading from "../../ components/Loading";
@@ -46,10 +46,12 @@ export const ScanResultNew: React.FC = () => {
       <Form.Field required error={errors['repositoryName'] !== undefined}>
         <label>Repository Name</label>
         <input 
+          data-testid='repositoryName'
           placeholder='Repository Name' 
           {...register("repositoryName", { required: true })} />
       </Form.Field>
       <Form.Select
+        data-testid='status'
         error={errors['status'] !== undefined}
         required
         fluid
@@ -70,7 +72,7 @@ export const ScanResultNew: React.FC = () => {
           setOptions={{ showPrintMargin: false }}
         />
       </Form.Field>
-      <Button type='submit' primary>Submit</Button>
+      <Button data-testid="submitBtn" type='submit' primary>Submit</Button>
       <Button type='button' onClick={gotToList}>Cancel</Button>
     </Form>
   </Container> : <Loading />;

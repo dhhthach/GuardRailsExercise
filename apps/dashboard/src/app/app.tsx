@@ -11,7 +11,13 @@ const AppContainer = styled.div`
   padding: 20px;
 `;
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  }
+});
 
 const ScanResultFindings = lazy(() => import('../pages/scan-result/ScanResultFindings'));
 const ScanResultNew = lazy(() => import('../pages/scan-result/ScanResultNew'));

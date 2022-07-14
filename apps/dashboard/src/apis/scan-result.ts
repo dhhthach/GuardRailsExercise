@@ -2,7 +2,7 @@ import { ScanResult, ScanResultListing } from "../shared/types"
 import axios, { AxiosResponse } from "axios";
 import { QueryFunctionContext } from "react-query";
 
-const scanResultUrl = `http://localhost:3333/api/scan-results`;
+const scanResultUrl = `/api/scan-results`;
 
 export const fetchScanResults = (): Promise<ScanResultListing[]> => {
   return axios.get<[], AxiosResponse<ScanResult[]>>(scanResultUrl)

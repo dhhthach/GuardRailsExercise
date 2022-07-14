@@ -8,7 +8,7 @@ import { ScanResult } from './scan-result/scan-result.entity';
     ScanResultModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'database',
       port: 5432,
       username: 'postgres',
       password: 'p@ssword',

@@ -76,14 +76,15 @@
       "outputs": ["coverage/apps/dashboard"],
       "options": {
         "jestConfig": "apps/dashboard/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "codeCoverage": true
       }
     },
     "deploy": {
       "builder": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "nx build dashboard",
+          "nx build dashboard --prod",
           "docker build -f ./apps/dashboard/Dockerfile . -t guardrails-dashboard"
         ],
         "parallel": false
