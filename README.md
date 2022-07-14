@@ -35,9 +35,7 @@ npx nx run-many --target=test --projects=api,dashboard --parallel
 
 Start the application and navigate to http://localhost:4444/swagger.
 
-![scanresults](https://github.com/dhhthach/GuardRailsExercise/blob/main/screenshot/scanresults.png?raw=true)
-![findings](https://github.com/dhhthach/GuardRailsExercise/blob/main/screenshot/findings.png?raw=true)
-![scanresultnew](https://github.com/dhhthach/GuardRailsExercise/blob/main/screenshot/scanresultnew.png?raw=true)
+![Screen1](https://github.com/dhhthach/GuardRailsExercise/blob/main/screenshot/swagger.png?raw=true)
 
 
 ## Tech stack
@@ -52,7 +50,9 @@ Start the application and navigate to http://localhost:4444/swagger.
 
 # Dashboard Details
 
-![Screen1](https://github.com/dhhthach/GuardRailsExercise/blob/main/screenshot/swagger.png?raw=true)
+![scanresults](https://github.com/dhhthach/GuardRailsExercise/blob/main/screenshot/scanresults.png?raw=true)
+![findings](https://github.com/dhhthach/GuardRailsExercise/blob/main/screenshot/findings.png?raw=true)
+![scanresultnew](https://github.com/dhhthach/GuardRailsExercise/blob/main/screenshot/scanresultnew.png?raw=true)
 
 
 ## Tech stack
