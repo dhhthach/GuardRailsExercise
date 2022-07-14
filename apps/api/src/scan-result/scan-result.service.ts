@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { ScanResult } from './scan-result.entity';
 import { v4 as uuidV4 } from 'uuid';
 import { CreateScanResultDTO, UpdateScanResultDTO } from './scan-result.dto';
+import { ScanStatus } from './scan-result.interface';
 
 @Injectable()
 export class ScanResultService {
@@ -13,6 +14,13 @@ export class ScanResultService {
     private scanResultRepository: Repository<ScanResult>,
   ) {}
 
+  private timestampMap = {
+    [ScanStatus.QUEUED]: 'queuedAt',
+    [ScanStatus.IN_PROGRESS]: 'scanningAt',
+    [ScanStatus.FAILURE]: 'finishedAt',
+    [ScanStatus.SUCCESS]: 'finishedAt'
+  }
+
   async save(scanResultPayload: CreateScanResultDTO) {
     const id = uuidV4();
     const emptyScanResult = this.scanResultRepository.create();
@@ -20,7 +28,7 @@ export class ScanResultService {
       ...emptyScanResult, 
       ...scanResultPayload,
       id,
-      queuedAt: new Date().toISOString()
+      [this.timestampMap[scanResultPayload.status]]: new Date().toISOString()
     });
     return this.scanResultRepository.findOneByOrFail({ id });
   }

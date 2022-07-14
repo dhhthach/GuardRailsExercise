@@ -13,13 +13,18 @@
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^9.0.0",
+    "ace-builds": "^1.7.1",
+    "axios": "^0.27.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "core-js": "^3.6.5",
     "pg": "^8.7.3",
     "react": "18.2.0",
+    "react-ace": "^10.1.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.33.1",
     "react-is": "18.2.0",
+    "react-query": "^3.39.1",
     "react-router-dom": "6.3.0",
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
@@ -29,7 +34,8 @@
     "styled-components": "5.3.5",
     "tslib": "^2.3.0",
     "typeorm": "^0.3.7",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@nestjs/schematics": "^8.0.0",
