@@ -6,13 +6,6 @@ This project was generated using [Nx](https://nx.dev).
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-## Development server (without Docker)
-
-```
-npx nx run-many --target=serve --projects=api,dashboard --parallel
-``` 
-for a dev server. Navigate to http://localhost:4444/.
-
 ## Development server (with Docker)
 
 Run this command to build and create docker images for api and dashboard. The build artifacts will be stored in the `dist/` directory
@@ -21,17 +14,40 @@ npx nx run-many --target=deploy --projects=api,dashboard --parallel
 ```
 then
 ```
-docker-compose up
+docker-compose up -d
 ```
 to make local environment ready. Navigate to http://localhost:4444/.
 
+## Development server (without Docker)
+
+```
+npx nx run-many --target=serve --projects=api,dashboard --parallel
+``` 
+for a dev server. Navigate to http://localhost:4444/.
 
 ## Running unit tests
 
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+```
+npx nx run-many --target=test --projects=api,dashboard --parallel
+```
 
-Run `nx affected:test` to execute the unit tests affected by a change.
+# API Details
 
-## Understand your workspace
+Start the application and navigate to http://localhost:4444/swagger.
 
-Run `nx graph` to see a diagram of the dependencies of your projects.
+## Tech stack
+- TypeORM with Postgres
+- NestJS v9
+
+## Code structure 
+- **Controller layer**: Handle request from UI service
+- **Service layer**: Business logic for application happens here
+- **Repository layer**: Working with database (TypeORM)
+- and **DTOs**
+
+# Dashboard Details
+
+## Tech stack
+- React v18
+- Yup
+- React Semantic UI
